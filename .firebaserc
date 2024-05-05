@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "somativawebdev"
+  },
+  "targets": {},
+  "etags": {
+    "somativawebdev": {
+      "extensionInstances": {}
+    }
+  },
+  "dataconnectEmulatorConfig": {}
+}
