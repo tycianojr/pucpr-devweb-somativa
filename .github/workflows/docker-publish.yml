@@ -51,8 +51,9 @@ jobs:
         tags: tyciano/somativa-devops:latest
 
     - name: Send Telegram Notification
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
       run: |
         curl -X POST \
             -H 'Content-Type: application/json' \
-            -d '{"chat_id": "${{ secrets.TELEGRAM_CHAT_ID }}", "text": "Workflow ${GITHUB_WORKFLOW} run completed on branch ${GITHUB_REF_NAME}.", "disable_notification": false}' \
+            -d '{"chat_id": "${{ secrets.TELEGRAM_CHAT_ID }}", "text": "Workflow ${{ github.workflow }} run completed on branch ${{ github.ref_name }}.", "disable_notification": false}' \
             https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage
