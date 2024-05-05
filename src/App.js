@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from '/home/dev123/Documentos/PUCPR/pucpr-devweb-somativa/src/login.js'; 
+import Login from './login';
 
 function App() {
   return (
